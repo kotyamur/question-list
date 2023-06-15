@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
+import Container from 'components/Container/Container';
 
 const HomePage = () => {
     return (
-      <div>
+      <Container>
         Home
-        <Link to="/card">
-          to the card page
-        </Link>
-      </div>
+        <Link to="/card">to the card page</Link>
+      </Container>
     );
 };
 

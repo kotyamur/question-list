@@ -1,16 +1,13 @@
-import { Link } from 'react-router-dom';
+import LoginForm from 'components/LoginForm/LoginForm';
+import Container from 'components/Container/Container';
+import Logo from 'components/Logo/Logo';
 
 const LoginPage = () => {
     return (
-      <div>
-        Login
-        <Link to="/">
-          to the main page
-        </Link>
-        <Link to="/register">
-          Sign up
-        </Link>
-      </div>
+      <Container>
+        <Logo />
+        <LoginForm />
+      </Container>
     );
 };
 
