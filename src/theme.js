@@ -33,7 +33,7 @@ export const theme = {
     none: '0',
     sm: '4px',
     md: '8px',
-    lg: '35px',
+    lg: '16px',
     round: '50%',
   },
 };

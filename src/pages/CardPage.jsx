@@ -1,13 +1,17 @@
-import { Link } from 'react-router-dom';
 import Container from 'components/Container/Container';
+import QuestionForm from 'components/QuestionForm/QuestionForm';
 
 const CardPage = () => {
     return (
-      <Container>
-        Card
-        <Link to="/">
-          to the main page
-        </Link>
+        <Container>
+            <p style={{
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                marginBottom: 20,
+            }}>
+                Edit/Create question
+            </p>
+            <QuestionForm />
       </Container>
     );
 };
