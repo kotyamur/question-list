@@ -4,7 +4,7 @@ import {
 } from './QuestionListItem.styled';
 import { RiDeleteBin6Line, RiPencilLine } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
-import { deleteQuestion } from 'redux/questions/actions';
+import { deleteQuestion } from 'redux/questionsSlice';
 
 const QuestionListItem = ({ question }) => {
     const {

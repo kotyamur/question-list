@@ -3,13 +3,12 @@ import { Form, ContentInput, ButtonWrapper } from './QuestionForm.styled';
 import Button from 'components/Button/Button';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addEditQuestion } from 'redux/questions/actions';
-import { selectQuestions } from 'redux/questions/selectors';
+import { addQuestion, editQuestion } from 'redux/questionsSlice';
+import { selectQuestions } from 'redux/selectors';
 
 const QuestionForm = () => {
   const questions = useSelector(selectQuestions);
   const location = useLocation();
-  console.log(location.state);
   const getQuestionById =
     location.state?.id
       ? questions.find(questions => questions.id === location.state.id)
@@ -41,7 +40,13 @@ const QuestionForm = () => {
       questionContent,
     };
     console.log(newQuestion);
-    dispatch(addEditQuestion(newQuestion));
+    if (location.state?.id) {
+      console.log(location.state?.id);
+      dispatch(editQuestion(newQuestion));
+    } else {
+      dispatch(addQuestion(newQuestion));
+    }
+    
     reset();
     navigate('/');
   };
