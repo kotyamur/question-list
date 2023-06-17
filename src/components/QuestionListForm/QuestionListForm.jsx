@@ -1,14 +1,12 @@
-import {
-  ListForm,
-  ListItem,
-  EditLink,
-  DeleteButton,
-} from './QuestionListForm.styled';
-import { RiDeleteBin6Line } from 'react-icons/ri';
-import { RiPencilLine } from 'react-icons/ri';
+import { ListForm, ListItem } from './QuestionListForm.styled';
+import { useSelector } from 'react-redux';
+import { selectQuestions } from 'redux/questions/selectors';
+import QuestionListItem from 'components/QuestionListItem/QuestionListItem';
 
 const QuestionListForm = () => {
-    const questionsInfo = ['AF79C', 'Anatomy', '2.1 Basics', 88, '75%', 1156 ]
+  const questions = useSelector(selectQuestions);
+  console.log(questions);
+
   return (
     <ListForm>
       <ListItem>
@@ -19,17 +17,11 @@ const QuestionListForm = () => {
         <p>Answer rate</p>
         <p>Total answers</p>
       </ListItem>
-      <ListItem>
-        {questionsInfo.map(item => (
-          <p>{item}</p>
-        ))}
-        <EditLink to="/card">
-          <RiPencilLine size={28} />
-        </EditLink>
-        <DeleteButton type="button">
-          <RiDeleteBin6Line size={28} />
-        </DeleteButton>
-      </ListItem>
+      {questions.map(question => (
+        <ListItem key={question.id}>
+          <QuestionListItem question={question} />
+        </ListItem>
+      ))}
     </ListForm>
   );
 };

@@ -26,6 +26,7 @@ export const ContentInput = styled.textarea`
   border-radius: ${p => p.theme.radii.lg};
   background-color: ${p => p.theme.colors.grey};
   margin-bottom: ${p => p.theme.space[5]}px;
+  padding: ${p => p.theme.space[3]}px;
 `;
 
 export const ButtonWrapper = styled.div`
